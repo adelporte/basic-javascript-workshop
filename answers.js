@@ -27,3 +27,5 @@ function stringAndNumber(word, number) {
 
 stringAndNumber("hello", 1);
 stringAndNumber("Augustin", 8);
+lastCharacter("");
+
