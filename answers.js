@@ -145,3 +145,23 @@ function returnNumberFactorial(number) {
 returnNumberFactorial(5);
 returnNumberFactorial(0);
 returnNumberFactorial(-5);
+
+/*Write a function that takes a phrase as a string, and returns the longest word in that phrase. 
+If the phrase contains more than one such word, return the first occurrence. Test your function on a few inputs.*/
+
+function returnLongestWord(string) {
+    var str = string.split(" ");
+    var longest = 0;
+    var word = null;
+    for (var i = 0; i < str.length; i++) {
+        if (longest < str[i].length) {
+            longest = str[i].length;
+            word = str[i];
+        }
+    }
+    return word;
+}
+
+returnLongestWord("The last word is quite long unexpected");
+returnLongestWord("Chibugaga the first word is the longest");
+returnLongestWord("NewFoundLand is a long word");
