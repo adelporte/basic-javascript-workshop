@@ -152,7 +152,7 @@ If the phrase contains more than one such word, return the first occurrence. Tes
 function returnLongestWord(string) {
     var str = string.split(" ");
     var longest = 0;
-    var word = null;
+    var word;
     for (var i = 0; i < str.length; i++) {
         if (longest < str[i].length) {
             longest = str[i].length;
@@ -165,3 +165,19 @@ function returnLongestWord(string) {
 returnLongestWord("The last word is quite long unexpected");
 returnLongestWord("Chibugaga the first word is the longest");
 returnLongestWord("NewFoundLand is a long word");
+
+/*Write a function that takes a phrase, and returns the same phrase with every word capitalized. 
+For example, if you pass your function "hello world", it should return "Hello World" and if you pass it "HELLO WORLD" or even "HeLLo WoRLD", it will also return "Hello World". 
+Test your function of a few inputs.*/
+
+function capFirstLetterEachWord(string) { 
+    return string.replace(/\w\S*/g, 
+    function(txt){
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        
+    });  
+}  
+
+capFirstLetterEachWord("This is a phrase"));
+capFirstLetterEachWord("Here is another phrase");
+capFirstLetterEachWord("This is another try");
