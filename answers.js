@@ -105,3 +105,16 @@ twoNumbersAndString2(10, 5, "subtract");
 twoNumbersAndString2(2, 3, "mult");
 twoNumbersAndString2(10, 5, "div");
 twoNumbersAndString2(10, 10, "hello");
+
+/*Write a function that takes a string and a number, and returns the string repeated that many number of times. 
+Test your function with various inputs.*/
+
+function returnStringXTimes(string, number) {
+    for (var i = 0; i <= number; i++) {
+        console.log(string);
+    }
+}
+
+console.log(returnStringXTimes("Hello there", 5));
+console.log(returnStringXTimes("How are you doing", 2));
+console.log(returnStringXTimes("Yes?", 5));
