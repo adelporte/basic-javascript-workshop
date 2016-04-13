@@ -17,3 +17,13 @@ function lastCharacter(word) {
 lastCharacter("Hello");
 lastCharacter("Da");
 lastCharacter("");
+
+/*Function that takes a string and a number, 
+and returns the character at the position represented by the number.*/
+
+function stringAndNumber(word, number) {
+    return word.substring(number -1, number);
+}
+
+stringAndNumber("hello", 1);
+stringAndNumber("Augustin", 8);
