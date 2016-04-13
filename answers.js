@@ -178,7 +178,7 @@ function capFirstLetterEachWord(string) {
     });  
 }  
 
-capFirstLetterEachWord("This is a phrase"));
+capFirstLetterEachWord("This is a phrase");
 capFirstLetterEachWord("Here is another phrase");
 capFirstLetterEachWord("This is another try");
 
@@ -197,7 +197,7 @@ function largestElementArray(array) {
     return thisIsTheNumber;
 }
 
-or
+//or
 
 function largestElementArray(array) {
     array.sort(function(a, b){return b-a});
@@ -207,3 +207,37 @@ function largestElementArray(array) {
 largestElementArray([10, 50, 100, 80, 50]);
 largestElementArray([10, 100, 200, 80, 50]);
 largestElementArray([900, 100, 200, 80, 800]);
+
+/*Write a function that takes an array, and returns a filtered array. 
+The filtered array should only contain the truthy values from the initial array. 
+Hint: there is an array method called filter that can help you with this :)
+*/
+
+function filteredArray(array) {
+    var newArray = [];
+    for (var i = 0; i < array.length; i++) {
+        if (array[i]) {
+            newArray.push(array[i]);
+        }
+    }
+    return newArray;
+}
+
+filteredArray([0, 50, 40, "", "hello",]);
+filteredArray([0, 0, 0, "", "hello",]);
+filteredArray([0, false, false, "", "hello",]);
+
+//or
+
+function filteredArray2(array) {
+    return array.filter(function(value) {
+        if(value) {
+            return value;
+        }
+    })
+}
+
+console.log(filteredArray2([0, 50, 40, "", "hello",]));
+filteredArray2([0, 0, 0, "", "hello",]);
+filteredArray2([0, false, false, "", "hello",]);
+
