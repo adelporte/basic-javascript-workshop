@@ -29,3 +29,13 @@ stringAndNumber("hello", 1);
 stringAndNumber("Augustin", 8);
 lastCharacter("");
 
+/*Function that takes two numbers and adds them together. 
+When we pass something else than a number, it simply adds the values we passed together.*/
+
+function addNumbersTogether(number1, number2) {
+    return number1 + number2;
+}
+
+addNumbersTogether(5, 5);
+addNumbersTogether(10, 10);
+addNumbersTogether("Hello", "You");
