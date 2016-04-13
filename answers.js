@@ -237,7 +237,7 @@ function filteredArray2(array) {
     })
 }
 
-console.log(filteredArray2([0, 50, 40, "", "hello",]));
+filteredArray2([0, 50, 40, "", "hello",]);
 filteredArray2([0, 0, 0, "", "hello",]);
 filteredArray2([0, false, false, "", "hello",]);
 
@@ -253,4 +253,27 @@ function sumNumbersArray(array) {
     return sum;
 }
 
-console.log(sumNumbersArray([1, 1, 1]));
+(sumNumbersArray([1, 1, 1]));
+(sumNumbersArray([20, 1, 1]));
+(sumNumbersArray([1, 5, 4]));
+
+/*Write a function that takes two arrays, and returns an array of all elements that are only in one array.*/
+
+function twoArraysSliced2(array1, array2) {
+    var newArray = [];
+    array1.forEach(function(num){
+        if(array2.indexOf(num) === -1){
+            newArray.push(num);
+        }
+    })
+    array2.forEach(function(num) {
+        if(array1.indexOf(num) === -1) {
+            newArray.push(num);
+        }
+    })
+        
+        return newArray;
+    }
+
+console.log(twoArraysSliced2([1,2,3,4], [1,2,5,6,7]));
+console.log(twoArraysSliced2([1,8,4,6,1], [10,2,1,6,7]));
