@@ -39,3 +39,14 @@ function addNumbersTogether(number1, number2) {
 addNumbersTogether(5, 5);
 addNumbersTogether(10, 10);
 addNumbersTogether("Hello", "You");
+
+/*Function that takes two numbers and multiplies them together. 
+When we pass soemthing else than a number, NaN is displayed as only numbers can be multiplied.*/
+
+function multiplyNumbers(number1, number2) {
+    return number1 * number2;
+}
+multiplyNumbers(10,10);
+multiplyNumbers(2, 3);
+multiplyNumbers(5,5);
+multiplyNumbers("Hello", "You");
