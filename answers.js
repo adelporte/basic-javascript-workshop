@@ -115,6 +115,16 @@ function returnStringXTimes(string, number) {
     }
 }
 
-console.log(returnStringXTimes("Hello there", 5));
-console.log(returnStringXTimes("How are you doing", 2));
-console.log(returnStringXTimes("Yes?", 5));
+returnStringXTimes("Hello there", 5);
+returnStringXTimes("How are you doing", 2);
+returnStringXTimes("Yes?", 5);
+
+/*Write a function that takes a string, and returns the reverse of that string. 
+For example, if you pass the function the string “hello”, it should return “olleh”. 
+Test your function on a few inputs, including the empty string.*/
+
+function reverseString(string) {
+    return string.split("").reverse().join("");
+}
+
+reverseString("Hello");
