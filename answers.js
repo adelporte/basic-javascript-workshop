@@ -50,3 +50,58 @@ multiplyNumbers(10,10);
 multiplyNumbers(2, 3);
 multiplyNumbers(5,5);
 multiplyNumbers("Hello", "You");
+
+/*Write a function that takes two numbers and a string. 
+If the string is ‘add’, then return the sum of the numbers. If the string is ‘subtract’, return the difference. 
+If the string is ‘mult’, return the product. If the string is ‘div’, return the ratio. Otherwise return 0.*/
+
+function twoNumbersAndString(number1, number2, string) {
+    if (string === "add") {
+        return number1 + number2;
+    } else if (string === "subtract") {
+        return number1 - number2;
+    } else if (string === "mult") {
+        return number1 * number2;
+    } else if (string === "div") {
+        return number1 / number2;
+    } else {
+        return 0;
+    }
+}
+
+twoNumbersAndString(5, 5, "add");
+twoNumbersAndString(10, 5, "subtract");
+twoNumbersAndString(2, 3, "mult");
+twoNumbersAndString(10, 5, "div");
+twoNumbersAndString(10, 10, "hello");
+
+//Second way to do that
+
+function twoNumbersAndString2(number1, number2, string) {
+    switch (string) {
+        case "add":
+            return number1 + number2;
+            break;
+        
+        case "subtract":
+            return number1 - number2;
+            break;
+
+        case "mult":
+            return number1 * number2;
+            break;
+        
+        case "div":
+            return number1 / number2;
+            break;
+        
+        default:
+            return 0;
+    }
+}
+
+twoNumbersAndString2(5, 5, "add");
+twoNumbersAndString2(10, 5, "subtract");
+twoNumbersAndString2(2, 3, "mult");
+twoNumbersAndString2(10, 5, "div");
+twoNumbersAndString2(10, 10, "hello");
