@@ -128,3 +128,20 @@ function reverseString(string) {
 }
 
 reverseString("Hello");
+reverseString("The longest string in the history of the universe");
+reverseString("");
+
+/*Write a function that takes a number and returns the factorial of a number.*/
+
+function returnNumberFactorial(number) {
+    var j = 1;
+    for (var i = 1; i <= number; i++) {
+        j = j * i;
+    }
+    return j;
+}
+
+
+returnNumberFactorial(5);
+returnNumberFactorial(0);
+returnNumberFactorial(-5);
