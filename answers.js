@@ -181,3 +181,29 @@ function capFirstLetterEachWord(string) {
 capFirstLetterEachWord("This is a phrase"));
 capFirstLetterEachWord("Here is another phrase");
 capFirstLetterEachWord("This is another try");
+
+/*Write a function that takes an array and returns the largest number of the array. 
+Test your function on a few inputs.
+*/
+
+function largestElementArray(array) {
+    var largestNumber = 0;
+    var thisIsTheNumber;
+    for (var i = 0; i < array.length; i++) {
+        if (largestNumber < array[i]);
+        largestNumber = array[i];
+        thisIsTheNumber = array[i];
+    }
+    return thisIsTheNumber;
+}
+
+or
+
+function largestElementArray(array) {
+    array.sort(function(a, b){return b-a});
+    return array[0];
+}
+
+largestElementArray([10, 50, 100, 80, 50]);
+largestElementArray([10, 100, 200, 80, 50]);
+largestElementArray([900, 100, 200, 80, 800]);
