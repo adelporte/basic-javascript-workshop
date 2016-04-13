@@ -241,3 +241,16 @@ console.log(filteredArray2([0, 50, 40, "", "hello",]));
 filteredArray2([0, 0, 0, "", "hello",]);
 filteredArray2([0, false, false, "", "hello",]);
 
+/*Write a function that takes an array of numbers, and returns the sum of all the numbers in the array.*/
+
+function sumNumbersArray(array) {
+    var sum = [];
+    var number = 0;
+    for(var i = 0; i < array.length; i++) {
+        number += array[i];
+    }
+    sum.push(number);
+    return sum;
+}
+
+console.log(sumNumbersArray([1, 1, 1]));
