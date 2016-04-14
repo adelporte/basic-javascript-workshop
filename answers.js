@@ -261,19 +261,32 @@ function sumNumbersArray(array) {
 
 function twoArraysSliced2(array1, array2) {
     var newArray = [];
-    array1.forEach(function(num){
-        if(array2.indexOf(num) === -1){
+    array1.forEach(function(num) {
+        if (array2.indexOf(num) === -1) {
             newArray.push(num);
         }
     })
     array2.forEach(function(num) {
-        if(array1.indexOf(num) === -1) {
+        if (array1.indexOf(num) === -1) {
             newArray.push(num);
         }
     })
-        
-        return newArray;
-    }
 
-console.log(twoArraysSliced2([1,2,3,4], [1,2,5,6,7]));
-console.log(twoArraysSliced2([1,8,4,6,1], [10,2,1,6,7]));
+    return newArray;
+}
+
+twoArraysSliced2([1,2,3,4], [1,2,5,6,7]);
+twoArraysSliced2([1,8,4,6,1], [10,2,1,6,7]);
+
+/*write a function that takes an array and a function as arguments. 
+The function should return a new array that maps every element of the input array by passing it through the function you received. 
+You are not allowed to use Array.map for this challenge, otherwise it would be too easy*/
+
+function mapArray(array, func) {
+    var newArray = [];
+    array.forEach(function(element){
+        newArray.push(func(element));
+    })
+    return newArray;
+}
+console.log(mapArray([0,5,9,4,5], function(ele){return ele + 1}));
