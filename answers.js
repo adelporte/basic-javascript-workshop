@@ -40,6 +40,10 @@ addNumbersTogether(5, 5);
 addNumbersTogether(10, 10);
 addNumbersTogether("Hello", "You");
 
+//OR
+
+//function addNumbersTogether2(number1, number2)
+
 /*Function that takes two numbers and multiplies them together. 
 When we pass soemthing else than a number, NaN is displayed as only numbers can be multiplied.*/
 
@@ -110,14 +114,23 @@ twoNumbersAndString2(10, 10, "hello");
 Test your function with various inputs.*/
 
 function returnStringXTimes(string, number) {
-    for (var i = 0; i <= number; i++) {
-        console.log(string);
+    var newString = "";
+    var i = 0;
+    while (i < number) {
+        if (i != number) {
+            newString = newString + string + "\n";
+            i++;
+        }
+        else {
+            newString = string;
+        }
     }
+    return newString;
 }
 
-returnStringXTimes("Hello there", 5);
-returnStringXTimes("How are you doing", 2);
-returnStringXTimes("Yes?", 5);
+console.log(returnStringXTimes("Hello there", 5));
+// returnStringXTimes("How are you doing", 2);
+// returnStringXTimes("Yes?", 5);
 
 /*Write a function that takes a string, and returns the reverse of that string. 
 For example, if you pass the function the string “hello”, it should return “olleh”. 
@@ -126,7 +139,6 @@ Test your function on a few inputs, including the empty string.*/
 function reverseString(string) {
     return string.split("").reverse().join("");
 }
-
 reverseString("Hello");
 reverseString("The longest string in the history of the universe");
 reverseString("");
@@ -187,11 +199,9 @@ Test your function on a few inputs.
 */
 
 function largestElementArray(array) {
-    var largestNumber = 0;
-    var thisIsTheNumber;
+    var thisIsTheNumber = 0;
     for (var i = 0; i < array.length; i++) {
-        if (largestNumber < array[i]);
-        largestNumber = array[i];
+        if (thisIsTheNumber < array[i]);
         thisIsTheNumber = array[i];
     }
     return thisIsTheNumber;
@@ -244,18 +254,16 @@ filteredArray2([0, false, false, "", "hello",]);
 /*Write a function that takes an array of numbers, and returns the sum of all the numbers in the array.*/
 
 function sumNumbersArray(array) {
-    var sum = [];
     var number = 0;
     for(var i = 0; i < array.length; i++) {
         number += array[i];
     }
-    sum.push(number);
-    return sum;
+    return number;
 }
 
-(sumNumbersArray([1, 1, 1]));
-(sumNumbersArray([20, 1, 1]));
-(sumNumbersArray([1, 5, 4]));
+sumNumbersArray([1, 1, 1]);
+sumNumbersArray([20, 1, 1]);
+sumNumbersArray([1, 5, 4]);
 
 /*Write a function that takes two arrays, and returns an array of all elements that are only in one array.*/
 
@@ -289,4 +297,4 @@ function mapArray(array, func) {
     })
     return newArray;
 }
-console.log(mapArray([0,5,9,4,5], function(ele){return ele + 1}));
+//mapArray([0,5,9,4,5], function(ele){return ele + 1}));
