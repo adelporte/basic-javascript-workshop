@@ -121,14 +121,11 @@ function returnStringXTimes(string, number) {
             newString = newString + string + "\n";
             i++;
         }
-        else {
-            newString = string;
-        }
     }
     return newString;
 }
 
-console.log(returnStringXTimes("Hello there", 5));
+//console.log(returnStringXTimes("Hello there", 5));
 // returnStringXTimes("How are you doing", 2);
 // returnStringXTimes("Yes?", 5);
 
@@ -178,6 +175,20 @@ returnLongestWord("The last word is quite long unexpected");
 returnLongestWord("Chibugaga the first word is the longest");
 returnLongestWord("NewFoundLand is a long word");
 
+//OR with REDUCE
+
+function returnLongestWord2(string1) {
+    var newArray = string1.split(" ");
+    return newArray.reduce(function(prev, next) {
+        if (prev.length < next.length) {
+            prev = next;
+        }
+        return prev;
+    });
+}
+
+//console.log(returnLongestWord2("The last word is quite long unexpected"));
+
 /*Write a function that takes a phrase, and returns the same phrase with every word capitalized. 
 For example, if you pass your function "hello world", it should return "Hello World" and if you pass it "HELLO WORLD" or even "HeLLo WoRLD", it will also return "Hello World". 
 Test your function of a few inputs.*/
@@ -214,9 +225,22 @@ function largestElementArray(array) {
     return array[0];
 }
 
+
+
+//OR
+
+function largestElementArray2(array1) {
+    return array1.reduce(function(prev, next) {
+        if (prev < next) {
+            prev = next
+        }
+        return prev;
+    })
+}
+
 largestElementArray([10, 50, 100, 80, 50]);
 largestElementArray([10, 100, 200, 80, 50]);
-largestElementArray([900, 100, 200, 80, 800]);
+//console.log(largestElementArray([900, 100, 200, 80, 800, 9999999]));
 
 /*Write a function that takes an array, and returns a filtered array. 
 The filtered array should only contain the truthy values from the initial array. 
@@ -251,6 +275,20 @@ filteredArray2([0, 50, 40, "", "hello",]);
 filteredArray2([0, 0, 0, "", "hello",]);
 filteredArray2([0, false, false, "", "hello",]);
 
+//or
+
+function myFilter(value) {
+    if(value) {
+        return value;
+    }
+}
+
+function filteredArray3(array3) {
+    return array3.filter(myFilter);
+}
+
+//console.log(filteredArray2([0, 50, 40, "", false, "hello",]));
+
 /*Write a function that takes an array of numbers, and returns the sum of all the numbers in the array.*/
 
 function sumNumbersArray(array) {
@@ -264,6 +302,17 @@ function sumNumbersArray(array) {
 sumNumbersArray([1, 1, 1]);
 sumNumbersArray([20, 1, 1]);
 sumNumbersArray([1, 5, 4]);
+
+//or , with reduce
+
+function sumUp(array55) {
+    return array55.reduce(function(prev, next) {
+        prev += next;
+        return prev;
+    })
+}
+
+//console.log(sumNumbersArray([20, 1, 1]));
 
 /*Write a function that takes two arrays, and returns an array of all elements that are only in one array.*/
 
@@ -283,8 +332,15 @@ function twoArraysSliced2(array1, array2) {
     return newArray;
 }
 
+//OR with concat
+
+function concatArrays (array1, array2) {
+    return array1.concat(array2);
+}
+
 twoArraysSliced2([1,2,3,4], [1,2,5,6,7]);
 twoArraysSliced2([1,8,4,6,1], [10,2,1,6,7]);
+//console.log(concatArrays([1,2,3,4], [1,2,5,6,7]));
 
 /*write a function that takes an array and a function as arguments. 
 The function should return a new array that maps every element of the input array by passing it through the function you received. 
@@ -297,4 +353,4 @@ function mapArray(array, func) {
     })
     return newArray;
 }
-//mapArray([0,5,9,4,5], function(ele){return ele + 1}));
+console.log(mapArray([0,5,9,4,5], function(ele){return ele + 1}));
